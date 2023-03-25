@@ -1,0 +1,39 @@
+
+<div class="bg-black">
+<app-navbar id="start" #scrollContainer class="bg-black"></app-navbar>
+
+<hr>
+
+<div class=" ">
+  <!-- <div >
+  <p class="text-center bg-black text-white font-bold  mt-60 font-serif p-5 text-3xl">Select Categories </p>
+</div> -->
+
+
+  <div class="min-h-screen flex flex-wrap justify-center items-center max-[667px]:mb-5 ">
+
+
+    <div *ngFor="let item of ( categories$ | async)?.cat" (click)="onCategory(item.title)"
+      style=" height: 200px; width: 250px;" class="m-10">
+
+      <button style=" height: 200px; width: 250px; background-image: url({{item.image}});
+    background-position: center; background-size:cover; display: flex ; align-items: end;" mat-stroked-button>
+
+
+
+
+      </button>
+
+      <button style="width: 100%;"
+        class="text-white p-2 bg-white/40 rounded font-serif text-lg text-center">{{item.title}}</button>
+
+
+    </div>
+
+  </div>
+</div>
+
+
+<app-footer id="contacts" #scrollContainer
+  class="w-full h-[404px] bg-black max-[564px]:h-[540px] flex flex-col items-center justify-around"></app-footer>
+</div>
